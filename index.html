@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>JavaScript Coding Quiz</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </link>
+</head>
+<header>
+    <h1 id="title">Coding Quiz Challenge</h1>
+</header>
+<body>
+    <section id="home">
+        <div class="card">
+            <h2>Welcome</h2>
+            <div class="card-body">
+                <textarea id="text-home" readonly class="text-area" aria-label="Info"></textarea>
+            </div>
+            <button id="start-quiz" class="btn">Start Quiz</button>
+            <button id="btn-scores" class="btn">View Scores</button>
+        </div>
+    </section>
+    <section id="quiz" hidden="hidden">
+        <div class="card">
+            <div class="card-header">
+                <h2 id="head-q">Question #</h2>
+                <label>00:01:00</label>
+            </div>
+            <div class="card-body">
+                <textarea readonly class="text-area" id="text-quiz"
+                    placeholder="Your question here"
+                    aria-label="Question"></textarea>
+            </div>
+            <div class="card-grid">
+                <button id="btn-a" data-number=1 class="btn">A.</button>
+                <button id="btn-b" data-number=2 class="btn">B.</button>
+                <button id="btn-c" data-number=3 class="btn">C.</button>
+                <button id="btn-d" data-number=4 class="btn">D.</button>
+            </div>
+            <h4 id="results">
+            </h4>
+        </div>
+    </section>
+    <section id="scores" hidden="hidden">
+        <div class="card">
+            <h2>Scores</h2>
+            <div class="card-body">
+                <textarea readonly class="text-area" id="text-scores"
+                    aria-label="Scores">
+                </textarea>
+            </div>
+            <div class="card-grid">
+                <button id="btn-clear" class="btn">Clear</button>
+                <button id="btn-home" class="btn">Home</button>
+            </div>
+        </section>
+        <footer>
+            <img src="./assets/images/logo.png">
+            <h3>Made by Daniel Flores D &copy; 2022</h3>
+        </footer>
+        <script src="./assets/js/questions.js"></script>
+        <script src="./assets/js/script.js"></script>
+    </body>
+
+</html>

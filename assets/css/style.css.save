@@ -1,0 +1,12 @@
+#buttons {
+    width: 500px;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    margin: 10px;
+    padding-top: 20px;
+}
+
+button {
+    margin:20px;
+}
