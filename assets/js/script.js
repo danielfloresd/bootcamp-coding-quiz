@@ -1,5 +1,3 @@
-console.log(this);
-console.log(questions);
 //  Home section elements
 var homeSection = document.getElementById("home");
 var homeText = document.getElementById("text-home");
@@ -9,7 +7,7 @@ var scoresBtn = document.getElementById("btn-scores");
 // Quiz section 
 var quizSection = document.getElementById("quiz");
 var head = document.getElementById("head-q");
-var question_label = document.getElementById("text-quiz");
+var quizText = document.getElementById("text-quiz");
 var optionA = document.getElementById("btn-a");
 var optionB = document.getElementById("btn-b");
 var optionC = document.getElementById("btn-c");
@@ -24,15 +22,18 @@ var scoreText = document.getElementById("text-scores");
 var clear = document.getElementById("btn-clear");
 var home = document.getElementById("btn-home");
 
-resultsLog = "";
-current = null;
-optionSelected = null;
-correct = 0;
-total = questions.length;
-scores = [];
+var resultsLog = "";
+var current = null;
+var optionSelected = null;
+var correct = 0;
+var total = questions.length;
+var scores = [];
+var secondsLeft = 60;
 
-homeMsg = "Try to answer the following code-related questions within the time limit. Keep in mindthat incorrect answers will penalize your time by reducing it by ten seconds."
-homeText.value = homeMsg;
+var homeMsg = "Try to answer the following code-related questions within the time limit. If the answer is wrong, 10s will be subtractred from the clock !"
+var timerInterval;
+
+homeText.textContent = homeMsg;
 
 addEventListeners();
 
@@ -41,19 +42,9 @@ init();
 function setQuestion() {
     if (i < total) {
         head.textContent = "Question #" + i;
-
-        for (var j = 0; j < optionButtons.length; j++) {
-            btn = optionButtons[j];
-            btn.textContent = "";
-        }
-
         q = questions[i++];
-        question_label.value = q.name;
-        optionA.textContent = "a) " + q.options[0];
-        optionB.textContent = "b) " + q.options[1];
-        optionC.textContent = "c) " + q.options[2];
-        optionD.textContent = "d) " + q.options[3];
-        console.log("Expected:" + q.answer);
+        quizText.textContent = q.name;
+        populateQuizBtn(q);
         current = q;
     } else {
         finish();
@@ -63,10 +54,11 @@ function setQuestion() {
 function addEventListeners() {
 
     startQuizBtn.addEventListener("click", function (event) {
-        console.log("quiz:");
-        console.log(quizSection);
         quizSection.removeAttribute("hidden");
         homeSection.setAttribute("hidden", "hidden");
+        resultsLog = "";
+        results.textContent = "";
+        setTime();
     });
 
     scoresBtn.addEventListener("click", function (event) {
@@ -92,8 +84,7 @@ function addEventListeners() {
     });
 
     clear.addEventListener("click", function (event) {
-        scores = [];
-        scoreText.value = "";
+        scoreText.textContent = "";
     });
     home.addEventListener("click", function (event) {
         scoreSection.setAttribute("hidden", "hidden");
@@ -103,73 +94,102 @@ function addEventListeners() {
 
 function selectOption(button, option) {
     optionSelected = option;
-    console.log("option:" + optionSelected);
-    buttonColor = "red";
-    feedback = "";
+ 
     if (optionSelected === q.answer) {
         // feedback = "Your are right ! 👍"
         // buttonColor="green"
         correct++;
-        resultsLog = resultsLog + "👍 ";
+        resultsLog = "👍 ";
     } else {
-        resultsLog = resultsLog + "👎 ";
+        resultsLog = "👎 ";
+        // Subract 10s from time left
+        secondsLeft = secondsLeft - 10;
     }
-    // button.setAttribute("style","background-color:"+buttonColor);
     results.textContent = resultsLog;
-    // console.log(feedback);
-
 }
 
 function reset() {
-
-    question_label.value = "";
-    resultsLog ="";
+    resultsLog = "";
     i = 1;
-
     q = questions[0];
-    question_label.value = q.name;
-    optionA.textContent = "a)"+q.options[0];
-    optionB.textContent = "b)"+q.options[1];
-    optionC.textContent = "c)"+q.options[2];
-    optionD.textContent = "d)"+q.options[3];
-    current = q;
+    quizText.textContent = q.name;
     head.textContent = "Question #" + i;
-    console.log("-------------------scores--------------------");
-    console.log(scores);
+
+    populateQuizBtn(q);
+    current = q;
 }
 
 function init() {
     i = 1;
     q = questions[0];
-    console.log("head:" + head);
+    
     head.textContent = "Question #" + i;
     resultsLog = "";
     results.textContent = resultsLog;
-    question_label.value = q.name;
-    optionA.textContent = "a) " + q.options[0];
-    optionB.textContent = "b) " + q.options[1];
-    optionC.textContent = "c) " + q.options[2];
-    optionD.textContent = "d) " + q.options[3];
+    quizText.textContent = q.name;
+
+    populateQuizBtn(q);
+
     current = q;
 }
 
-function finish() {
-    score = Math.round((correct / total) * 100);
-    initials = window.prompt("You score " + score + "%\n" + "Enter initials:");
-    scores.push([initials, score]);
-    reset();
-    correct = 0;
-    quizSection.setAttribute("hidden", "hidden");
-    initScores();
+function populateQuizBtn(question) {
+    for (var i = 0; i < optionButtons.length; i++) {
+        var btn = optionButtons[i];
+        btn.textContent = (i + 1) + ". " + question.options[i];
+    }
 }
 
-function initScores() {
+function finish() {
+   
+    clearInterval(timerInterval);
+    var initials = window.prompt("You score " + correct + "/" + total + "\n" + "Enter initials:");
+    if (!initials)
+        initials = "NN";
+
+    reset();
+    quizSection.setAttribute("hidden", "hidden");
+    addScore(initials, correct);
+    correct = 0;
+}
+
+function addScore(name, score) {
     scoreSection.removeAttribute("hidden");
-    scoreList = "";
-    for (var i = 0; i < scores.length; i++) {
-        scoreList = scoreList + scores[i][0] + ": " + scores[i][1] + "%\n";
-    }
-    scoreText.value = scoreList;
+    var scoreList = document.getElementById("text-scores");
+    var liEl = document.createElement('li');
+    liEl.textContent = name + " - " + score;
+    scoreList.appendChild(liEl);
+}
+
+
+function setTime() {
+    // Sets interval in variable
+    secondsLeft = 60;
+    var timer = document.getElementById("timer");
+
+    timerInterval = setInterval(function () {
+        secondsLeft--;
+        if (secondsLeft <= 0) {
+            // Stops execution of action at set interval
+            clearInterval(timerInterval);
+            timerInterval = null;
+            // Calls function to create and append image
+            //   sendMessage();
+            window.alert("Your time has expired ! 00:00");
+            quizSection.setAttribute("hidden", "hidden");
+            homeSection.removeAttribute("hidden");
+
+        } else {
+            var formatSecs = ("0" + secondsLeft).slice(-2);
+            timer.textContent = "00:"+formatSecs;
+            if(secondsLeft<10){
+                timer.setAttribute("style","color:red");
+            }else{
+                timer.removeAttribute("style");
+            }
+        }
+
+    }, 1000);
 }
 
 function shuffle(array) {
