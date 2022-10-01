@@ -10,22 +10,22 @@ var questions =[
     {
         "name": "Which one is a looping structure in JavaScript?",
         "options": [
-            "All the below",
-            "For",
-            "While",
+            "all the below",
+            "for",
+            "while",
             "do-while loops"
         ],
-        "answer": "All the below"
+        "answer": "all the below"
     },
     {
         "name": "What are the two basic groups of data types in JavaScript?",
         "options": [
-            "Primitive and attribute",
-            "Primitive and reference types",
-            "Reference types and attribute",
-            "None of the above"
+            "primitive and attribute",
+            "primitive and reference types",
+            "reference types and attribute",
+            "none of the above"
         ],
-        "answer": "Primitive and reference types"
+        "answer": "primitive and reference types"
     },
     {
         "name": "Commonly used data types DO NOT include:",
@@ -40,32 +40,32 @@ var questions =[
     {
         "name": "Boolean operators that can be used in JavaScript include:",
         "options": [
-            "'And' Operator &&",
-            "'Or' Operator ||",
-            "'Not' Operator !",
-            "All the above"
+            "'and' operator &&",
+            "'or' operator ||",
+            "'not' operator !",
+            "all the above"
         ],
-        "answer": "All the above"
+        "answer": "all the above"
     },
     {
         "name": "Which one of these is not among the three different types of errors in JavaScript?",
         "options": [
-            "Animation time errors",
-            "Load time errors",
-            "Run time errors",
-            "Logical Errors"
+            "animation time errors",
+            "load time errors",
+            "run time errors",
+            "logical Errors"
         ],
-        "answer": "Animation time errors"
+        "answer": "animation time errors"
     },
     {
         "name": "What is the data type of variables in JavaScript?",
         "options": [
-            "Object data types",
-            "Function data type",
-            "None of the above",
-            "All of the above"
+            "object data types",
+            "function data type",
+            "none of the above",
+            "all of the above"
         ],
-        "answer": "Object data types"
+        "answer": "object data types"
     },
     {
         "name": "The condition in an if / else statement is enclosed within ____.",
@@ -106,15 +106,16 @@ var questions =[
             "console.log"
         ],
         "answer": "console.log"
-    },
-    {
-        "name": "What is the type of Pop up boxes available in JavaScript?:",
-        "options": [
-            "Alert",
-            "Confirm",
-            "Prompt",
-            "All the above"
-        ],
-        "answer": "All the above"
     }
+    // ,
+    // {
+    //     "name": "What is the type of Pop up boxes available in JavaScript?:",
+    //     "options": [
+    //         "alert",
+    //         "confirm",
+    //         "prompt",
+    //         "all the above"
+    //     ],
+    //     "answer": "all the above"
+    // }
 ];
