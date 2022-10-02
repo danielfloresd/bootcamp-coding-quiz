@@ -8,13 +8,13 @@
 }
 
 header {
- padding: 3px;
- text-align: center;
- font-size: xx-large;
- border-radius: 10px;
+    padding: 3px;
+    text-align: center;
+    font-size: xx-large;
+    border-radius: 10px;
 }
 
-h2{
+h2 {
     font-size: x-large;
 }
 
@@ -26,7 +26,7 @@ body {
     display: flex;
 }
 
-#ol-start{
+#ol-start {
     align-items: center;
 }
 
@@ -36,7 +36,7 @@ article {
     border-width: 1px;
     box-shadow: black 0px 4px 16px 0px;
     max-width: 60%;
-    margin-left: 20%;    
+    margin-left: 20%;
 }
 
 #timer {
@@ -51,7 +51,7 @@ article {
     opacity: 0.9;
 }
 
-#start-quiz{
+#start-quiz {
     text-align: center;
 }
 
@@ -99,16 +99,16 @@ ul {
     min-height: 90vh;
 }
 
-#ol-scores{
+#ol-scores {
     display: flex;
     flex-direction: row;
 }
 
-#btn-clear{
+#btn-clear {
     text-align: center;
 }
 
-#btn-home{
+#btn-home {
     text-align: center;
 }
 
@@ -121,11 +121,16 @@ footer {
     width: 100%;
     padding-bottom: 5px;
     font-size: smaller;
+    text-align: center;
+}
+
+footer h3 {
+    padding:2%;
 }
 
 .btn:hover {
     opacity: 1.0;
-    background: pink; 
+    background: pink;
 }
 
 @media (max-width: 980px) {
@@ -141,7 +146,8 @@ footer {
         width: 100%;
         font-size: x-large;
     }
-/* Hack to remove hover effect in mobile devices */
+
+    /* Hack to remove hover effect in mobile devices */
     .btn:hover {
         opacity: 0.9;
         background-color: var(--button-color);
@@ -158,6 +164,10 @@ footer {
     }
 
     footer {
-        padding-bottom: 25px;
+        position: relative;
+    }
+
+    footer h3 {
+        padding-top:5%;
     }
 }
