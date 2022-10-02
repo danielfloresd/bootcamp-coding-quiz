@@ -119,7 +119,8 @@ footer {
     bottom: 0;
     /* margin-left: 35%; */
     width: 100%;
-    padding-bottom: 20px;
+    padding-bottom: 5px;
+    font-size: smaller;
 }
 
 .btn:hover {
@@ -154,5 +155,9 @@ footer {
 
     .text-area {
         font-size: x-large;
+    }
+
+    footer {
+        padding-bottom: 25px;
     }
 }
