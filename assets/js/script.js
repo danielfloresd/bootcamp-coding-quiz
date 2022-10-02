@@ -21,7 +21,7 @@ var scoreText = document.getElementById("text-scores");
 
 var clear = document.getElementById("btn-clear");
 var home = document.getElementById("btn-home");
-
+var alertColor = "#ff9900";
 var resultsLog = "";
 var current = null;
 var optionSelected = null;
@@ -62,6 +62,7 @@ function addEventListeners() {
         homeSection.setAttribute("hidden", "hidden");
         resultsLog = "";
         results.textContent = "";
+        correct = 0;
         setTime();
     });
 
@@ -168,7 +169,8 @@ function setTime() {
     // Sets interval in variable
     secondsLeft = 60;
     var timer = document.getElementById("timer");
-
+    timer.textContent = "00:"+secondsLeft;
+    timer.removeAttribute("style");
     timerInterval = setInterval(function () {
         secondsLeft--;
         if (secondsLeft <= 0) {
@@ -186,7 +188,7 @@ function setTime() {
             var formatSecs = ("0" + secondsLeft).slice(-2);
             timer.textContent = "00:"+formatSecs;
             if(secondsLeft<10){
-                timer.setAttribute("style","background-color:orange");
+                timer.setAttribute("style","background-color:"+alertColor);
             }else{
                 timer.removeAttribute("style");
             }
