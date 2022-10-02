@@ -39,10 +39,14 @@ addEventListeners();
 
 init();
 
-function setQuestion() {
-    if (i < total) {
-        head.textContent = "Question #" + i;
-        q = questions[i++];
+function nextQuestion() {
+
+    if (i < total-1) {
+        // Next question pls
+        i++;
+        head.textContent = "Question #" + (i+1);
+        q = questions[i];
+
         quizText.textContent = q.name;
         populateQuizBtn(q);
         current = q;
@@ -68,19 +72,19 @@ function addEventListeners() {
 
     optionA.addEventListener("click", function (event) {
         selectOption(optionA, current.options[0]);
-        setQuestion();
+        nextQuestion();
     });
     optionB.addEventListener("click", function (event) {
         selectOption(optionB, current.options[1]);
-        setQuestion();
+        nextQuestion();
     });
     optionC.addEventListener("click", function (event) {
         selectOption(optionC, current.options[2]);
-        setQuestion();
+        nextQuestion();
     });
     optionD.addEventListener("click", function (event) {
         selectOption(optionD, current.options[3]);
-        setQuestion();
+        nextQuestion();
     });
 
     clear.addEventListener("click", function (event) {
@@ -93,37 +97,35 @@ function addEventListeners() {
 }
 
 function selectOption(button, option) {
-    optionSelected = option;
- 
-    if (optionSelected === q.answer) {
-        // feedback = "Your are right ! 👍"
-        // buttonColor="green"
+    var color = "green";
+    if (option === q.answer) {
         correct++;
-        resultsLog = "👍 ";
+        resultsLog = "👍 Keep the good work !";
     } else {
-        resultsLog = "👎 ";
-        // Subract 10s from time left
+        resultsLog = "👎 Maybe next time";
         secondsLeft = secondsLeft - 10;
+        color = "red";
     }
+    results.style.color = color;
     results.textContent = resultsLog;
 }
 
 function reset() {
     resultsLog = "";
-    i = 1;
+    i = 0;
     q = questions[0];
     quizText.textContent = q.name;
-    head.textContent = "Question #" + i;
+    head.textContent = "Question #" + (i+1);
 
     populateQuizBtn(q);
     current = q;
 }
 
 function init() {
-    i = 1;
+    i = 0;
     q = questions[0];
     
-    head.textContent = "Question #" + i;
+    head.textContent = "Question #" + (i+1);
     resultsLog = "";
     results.textContent = resultsLog;
     quizText.textContent = q.name;
@@ -178,12 +180,13 @@ function setTime() {
             window.alert("Your time has expired ! 00:00");
             quizSection.setAttribute("hidden", "hidden");
             homeSection.removeAttribute("hidden");
+            reset();
 
         } else {
             var formatSecs = ("0" + secondsLeft).slice(-2);
             timer.textContent = "00:"+formatSecs;
             if(secondsLeft<10){
-                timer.setAttribute("style","color:red");
+                timer.setAttribute("style","background-color:orange");
             }else{
                 timer.removeAttribute("style");
             }

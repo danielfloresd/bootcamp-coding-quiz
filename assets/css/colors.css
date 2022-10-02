@@ -1,0 +1,44 @@
+:root {
+    --body-color: #ededf6;
+    --header-color: #31343d;
+    --h1-color: #f4717f;
+    --section-color: #ededf6;
+    --article-color: white;
+    --ol-color: lightgrey;
+    --button-color:#f4717f;
+    --p-color: white;
+    --footer-color: #31343d;
+    --footer-font-color: white;
+}
+
+body {
+    background-color: var(--body-color);
+}
+
+header {
+    background-color: var(--header-color);
+}
+
+h1 {
+    background-color: var(--h1-color);
+}
+
+section {
+    background-color: var(--section-color);
+}
+
+article {
+    background-color: var(--article-color);
+}
+
+ol {
+    background-color: var(--ol-color);
+}
+
+button {
+    background-color: var(--button-color);
+}
+
+p {
+    background-color: var(--p-color);
+}
