@@ -137,8 +137,8 @@ footer {
 
     .btn {
         text-align: center;
-        /* opacity: 1.0; */
         width: 100%;
+        font-size: x-large;
     }
 /* Hack to remove hover effect in mobile devices */
     .btn:hover {
@@ -152,8 +152,7 @@ footer {
         margin-left: 0%;
     }
 
-    #text-area {
-        /* font-size: 1rem; */
-        height: 200%;
+    .text-area {
+        font-size: x-large;
     }
 }
