@@ -6,7 +6,7 @@
 //     console.log(data)
 //   })
 
-var questions =[
+const questions =[
     {
         "name": "Which one is a looping structure in JavaScript?",
         "options": [
@@ -48,7 +48,7 @@ var questions =[
         "answer": "all the above"
     },
     {
-        "name": "Which one of these is not among the three different types of errors in JavaScript?",
+        "name": "Which one of these IS NOT among the three different types of errors in JavaScript?",
         "options": [
             "animation time errors",
             "load time errors",

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>".js Coding Quiz"</title>
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/colors.css">
     <link rel="stylesheet" href="assets/css/style.css">
     </link>
 </head>
@@ -18,53 +19,52 @@
     <div id="page-container">
         <div id="content-wrap">
             <section id="home">
-                <div class="card">
-                    <h1>Welcome</h1>
-                    <div class="card-body">
+                <article>
+                    <a id="btn-scores">View Scores</a>
+                    <div>
                         <p id="text-home" readonly class="text-area" aria-label="Info"></p>
                     </div>
-                    <div class="card-grid">
+                    <ol id="ol-start">
                         <button id="start-quiz" class="btn">Start Quiz</button>
-                        <button id="btn-scores" class="btn">View Scores</button>
-                    </div>
-                </div>
+                    </ol>
+                </article>
             </section>
             <section id="quiz" hidden="hidden">
-                <div class="card">
-                    <div class="card-header">
-                        <h1 id="head-q">Question #</h1>
-                        <p id="timer">01:00</p>
+                <article>
+                    <div id="quiz-header">
+                        <h2 id="head-q">Q</h2>
+                        <time id="timer">01:00</time>
                     </div>
-                    <div class="card-body">
+                    <div>
                         <p readonly class="text-area" id="text-quiz" placeholder="Your question here"
                             aria-label="Question"></p>
                     </div>
-                    <div class="card-grid">
+                    <ol>
                         <button id="btn-a" data-number=1 class="btn">1.</button>
                         <button id="btn-b" data-number=2 class="btn">2.</button>
                         <button id="btn-c" data-number=3 class="btn">3.</button>
                         <button id="btn-d" data-number=4 class="btn">4.</button>
-                    </div>
-                    <h2 id="results">
-                        </h4>
-                </div>
+                    </ol>
+                    <aside id="results"></aside>
+                </article>
             </section>
             <section id="scores" hidden="hidden">
-                <div class="card">
-                    <h1>Scores</h1>
-                    <div class="card-body">
-                        <ol readonly class="text-area" id="text-scores" aria-label="Scores">
-                        </ol>
+                <article>
+                    <h2>Scores</h2>
+                    <div>
+                        <ul readonly class="text-area" id="text-scores" aria-label="Scores">
+                        </ul>
                     </div>
-                    <div class="card-grid">
+                    <ol id="ol-scores">
                         <button id="btn-clear" class="btn">Clear</button>
                         <button id="btn-home" class="btn">Home</button>
-                    </div>
+                     </ol>        
+                </article>
             </section>
         </div>
         <footer>
-            <img src="./assets/images/logo.png">
-           <h3>Made by Daniel Flores D &copy; 2022</h3>
+            <img src="./assets/images/logo.png" alt="Picure of Eduarda">
+            <h3>Made by Daniel Flores D &copy; 2022</h3>
         </footer>
     </div>
     <script src="./assets/js/questions.js"></script>
