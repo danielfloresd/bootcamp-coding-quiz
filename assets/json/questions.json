@@ -1,112 +1,102 @@
 [
     {
-        "name": "Which one is a looping structure in JavaScript?",
+        "name": "What is CSS?",
         "options": [
-            "All the below",
-            "For",
-            "While",
-            "do-while loops"
+            "CSS is a style sheet language",
+            "CSS is designed to separate the presentation and content, including layout, colors, and fonts",
+            "CSS is the language used to style the HTML documents",
+            "All of the mentioned"
         ],
-        "answer": "All the below"
+        "answer": "All of the mentioned"
     },
     {
-        "name": "What are the two basic groups of data types in JavaScript?",
+        "name": "Which of the following tag is used to embed css in html page?",
         "options": [
-            "Primitive and attribute",
-            "Primitive and reference types",
-            "Reference types and attribute",
-            "None of the above"
+            "<css>",
+            "<!DOCTYPE html>",
+            "<script>",
+            "<style>"
         ],
-        "answer": "Primitive and reference types"
+        "answer": "<style>"
     },
     {
-        "name": "Commonly used data types DO NOT include:",
+        "name": "Which of the following CSS selectors are used to specify a group of elements?",
         "options": [
-            "strings",
-            "booleans",
-            "alerts",
-            "numbers"
+            "tag",
+            "id",
+            "class",
+            "both class and tag"
         ],
-        "answer": "alerts"
+        "answer": "class"
     },
     {
-        "name": "Boolean operators that can be used in JavaScript include:",
+        "name": "Which of the following has introduced text, list, box, margin, border, color, and background properties?",
         "options": [
-            "'And' Operator &&",
-            "'Or' Operator ||",
-            "'Not' Operator !",
-            "All the above"
+            "HTML",
+            "PHP",
+            "CSS",
+            "Ajax"
         ],
-        "answer": "All the above"
+        "answer": "CSS"
     },
     {
-        "name": "Which one of these is not among the three different types of errors in JavaScript?",
+        "name": "Which of the following CSS framework is used to create a responsive design?",
         "options": [
-            "Animation time errors",
-            "Load time errors",
-            "Run time errors",
-            "Logical Errors"
+            "django",
+            "rails",
+            "larawell",
+            "bootstrap"
         ],
-        "answer": "Animation time errors"
+        "answer": "bootstrap"
     },
     {
-        "name": "What is the data type of variables in JavaScript?",
+        "name": "Which of the following CSS selector is used to specify a rule to bind a particular unique element?",
         "options": [
-            "Object data types",
-            "Function data type",
-            "None of the above",
-            "All of the above"
+            "tag",
+            "id",
+            "class",
+            "both class and tag"
         ],
-        "answer": "Object data types"
+        "answer": "id"
     },
     {
-        "name": "The condition in an if / else statement is enclosed within ____.",
+        "name": "Which of the following type of HTML tag is used to define an internal style sheet?",
         "options": [
-            "quotes",
-            "curly brackets",
-            "parentheses",
-            "square brackets"
+            "<script>",
+            "<link>",
+            "<class>",
+            "<style>"
         ],
-        "answer": "parentheses"
+        "answer": "<style>"
     },
     {
-        "name": "Arrays in JavaScript can be used to store ____.",
+        "name": "Which of the following CSS property is used to make the text bold?",
         "options": [
-            "numbers and strings",
-            "other arrays",
-            "booleans",
-            "all of the above"
+            "text-decoration: bold",
+            "font-weight: bold",
+            "font-style: bold",
+            "text-align: bold"
         ],
-        "answer": "all of the above"
+        "answer": "font-weight: bold"
     },
     {
-        "name": "String values must be enclosed within ____ when being assigned to variables.",
+        "name": "What will be the output of following CSS code snippet? h1 {color:\"green\"}",
         "options": [
-            "commas",
-            "curly brackets",
-            "quotes",
-            "parentheses"
+            "nothings happen",
+            "error occurs",
+            "heading becomes dark-green",
+            "heading becomes green"
         ],
-        "answer": "quotes"
+        "answer": "nothings happen"
     },
     {
-        "name": "A very useful tool used during development and debugging for printing content to the debugger is:",
+        "name": "Which of the following CSS style property is used to specify an italic text?",
         "options": [
-            "JavaScript",
-            "terminal / bash",
-            "for loops",
-            "console.log"
+            "style",
+            "font",
+            "font-style",
+            "@font-face"
         ],
-        "answer": "console.log"
-    },
-    {
-        "name": "What is the type of Pop up boxes available in JavaScript?:",
-        "options": [
-            "Alert",
-            "Confirm",
-            "Prompt",
-            "All the above"
-        ],
-        "answer": "All the above"
+        "answer": "font-style"
     }
 ]
