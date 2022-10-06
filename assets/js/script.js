@@ -31,14 +31,11 @@ var total = questions.length;
 var scores = [];
 var secondsLeft = 60;
 
-var homeMsg = "Try to answer the following code-related questions within the time limit. If the answer is wrong, 10s will be subtractred from the clock !"
+var homeMsg = "Try to answer the following questions within the time limit. If the answer is wrong, 10s will be subtractred from the clock !"
 var timerInterval;
 
 homeText.textContent = homeMsg;
 
-addEventListeners();
-
-init();
 
 function nextQuestion() {
 
@@ -234,6 +231,10 @@ function clearScores() {
     scores = [];
 }
 
+
+addEventListeners();
+
+init();
 
 
 
