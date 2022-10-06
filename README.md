@@ -8,6 +8,7 @@ This project aims to implement a timed quiz web application where students can t
 * Max time per quiz: 1 minute
 * Number of quesitions: 10 - multiple choice
 * Student score board
+* Student scores should be saved to local storage
 * Students can take the quiz as many times as desired
 Note: If the student answers a question incorrectly, 10s are deducted from the remaining timer.
 

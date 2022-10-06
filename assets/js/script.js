@@ -18,6 +18,7 @@ var optionButtons = [optionA, optionB, optionC, optionD];
 // Scores section
 var scoreSection = document.getElementById("scores");
 var scoreText = document.getElementById("text-scores");
+var scoreList = document.getElementById("text-scores");
 
 var clear = document.getElementById("btn-clear");
 var home = document.getElementById("btn-home");
@@ -90,6 +91,8 @@ function addEventListeners() {
 
     clear.addEventListener("click", function (event) {
         scoreText.textContent = "";
+        scoreList.innerHTML = "";
+        clearScores();
     });
     home.addEventListener("click", function (event) {
         scoreSection.setAttribute("hidden", "hidden");
@@ -134,6 +137,7 @@ function init() {
     populateQuizBtn(q);
 
     current = q;
+    readScores();
 }
 
 function populateQuizBtn(question) {
@@ -158,10 +162,10 @@ function finish() {
 
 function addScore(name, score) {
     scoreSection.removeAttribute("hidden");
-    var scoreList = document.getElementById("text-scores");
     var liEl = document.createElement('li');
     liEl.textContent = name + " - " + score;
     scoreList.appendChild(liEl);
+    storeScore(name,score);
 }
 
 
@@ -200,3 +204,40 @@ function setTime() {
 function shuffle(array) {
     array.sort(() => Math.random() - 0.5);
 }
+
+// Save name and score to localStorage
+function storeScore(name, score) {
+    scores.push({ name: name, score: score });
+    localStorage.setItem("scores", JSON.stringify(scores));
+}
+
+//Read scores from localStorage
+function readScores() {
+    var storedScores = JSON.parse(localStorage.getItem("scores"));
+    console.log(storedScores);
+    if (storedScores !== null) {
+        scores = storedScores;
+    }
+
+    // Create a list item for each scores
+    for (var i = 0; i < scores.length; i++) {
+        var score = scores[i];
+        var liEl = document.createElement('li');
+        liEl.textContent = score.name + " - " + score.score;
+        scoreList.appendChild(liEl);
+    }
+}
+
+//Clear scores from localStorage
+function clearScores() {
+    localStorage.clear();
+    scores = [];
+}
+
+
+
+
+
+
+
+
