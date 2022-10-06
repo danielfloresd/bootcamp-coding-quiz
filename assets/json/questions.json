@@ -1,7 +1,7 @@
 [
     {
         "name": "Which one is a looping structure in JavaScript?",
-        "choices": [
+        "options": [
             "All the below",
             "For",
             "While",
@@ -11,7 +11,7 @@
     },
     {
         "name": "What are the two basic groups of data types in JavaScript?",
-        "choices": [
+        "options": [
             "Primitive and attribute",
             "Primitive and reference types",
             "Reference types and attribute",
@@ -21,7 +21,7 @@
     },
     {
         "name": "Commonly used data types DO NOT include:",
-        "choices": [
+        "options": [
             "strings",
             "booleans",
             "alerts",
@@ -31,7 +31,7 @@
     },
     {
         "name": "Boolean operators that can be used in JavaScript include:",
-        "choices": [
+        "options": [
             "'And' Operator &&",
             "'Or' Operator ||",
             "'Not' Operator !",
@@ -41,7 +41,7 @@
     },
     {
         "name": "Which one of these is not among the three different types of errors in JavaScript?",
-        "choices": [
+        "options": [
             "Animation time errors",
             "Load time errors",
             "Run time errors",
@@ -51,7 +51,7 @@
     },
     {
         "name": "What is the data type of variables in JavaScript?",
-        "choices": [
+        "options": [
             "Object data types",
             "Function data type",
             "None of the above",
@@ -61,7 +61,7 @@
     },
     {
         "name": "The condition in an if / else statement is enclosed within ____.",
-        "choices": [
+        "options": [
             "quotes",
             "curly brackets",
             "parentheses",
@@ -71,7 +71,7 @@
     },
     {
         "name": "Arrays in JavaScript can be used to store ____.",
-        "choices": [
+        "options": [
             "numbers and strings",
             "other arrays",
             "booleans",
@@ -81,7 +81,7 @@
     },
     {
         "name": "String values must be enclosed within ____ when being assigned to variables.",
-        "choices": [
+        "options": [
             "commas",
             "curly brackets",
             "quotes",
@@ -91,7 +91,7 @@
     },
     {
         "name": "A very useful tool used during development and debugging for printing content to the debugger is:",
-        "choices": [
+        "options": [
             "JavaScript",
             "terminal / bash",
             "for loops",
@@ -101,7 +101,7 @@
     },
     {
         "name": "What is the type of Pop up boxes available in JavaScript?:",
-        "choices": [
+        "options": [
             "Alert",
             "Confirm",
             "Prompt",
