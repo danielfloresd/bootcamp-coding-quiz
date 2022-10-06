@@ -1,0 +1,102 @@
+[
+    {
+        "name": "What is CSS?",
+        "options": [
+            "CSS is a style sheet language",
+            "CSS is designed to separate the presentation and content, including layout, colors, and fonts",
+            "CSS is the language used to style the HTML documents",
+            "All of the mentioned"
+        ],
+        "answer": "All of the mentioned"
+    },
+    {
+        "name": "Which of the following tag is used to embed css in html page?",
+        "options": [
+            "<css>",
+            "<!DOCTYPE html>",
+            "<script>",
+            "<style>"
+        ],
+        "answer": "<style>"
+    },
+    {
+        "name": "Which of the following CSS selectors are used to specify a group of elements?",
+        "options": [
+            "tag",
+            "id",
+            "class",
+            "both class and tag"
+        ],
+        "answer": "class"
+    },
+    {
+        "name": "Which of the following has introduced text, list, box, margin, border, color, and background properties?",
+        "options": [
+            "HTML",
+            "PHP",
+            "CSS",
+            "Ajax"
+        ],
+        "answer": "CSS"
+    },
+    {
+        "name": "Which of the following CSS framework is used to create a responsive design?",
+        "options": [
+            "django",
+            "rails",
+            "larawell",
+            "bootstrap"
+        ],
+        "answer": "bootstrap"
+    },
+    {
+        "name": "Which of the following CSS selector is used to specify a rule to bind a particular unique element?",
+        "options": [
+            "tag",
+            "id",
+            "class",
+            "both class and tag"
+        ],
+        "answer": "id"
+    },
+    {
+        "name": "Which of the following type of HTML tag is used to define an internal style sheet?",
+        "options": [
+            "<script>",
+            "<link>",
+            "<class>",
+            "<style>"
+        ],
+        "answer": "<style>"
+    },
+    {
+        "name": "Which of the following CSS property is used to make the text bold?",
+        "options": [
+            "text-decoration: bold",
+            "font-weight: bold",
+            "font-style: bold",
+            "text-align: bold"
+        ],
+        "answer": "font-weight: bold"
+    },
+    {
+        "name": "What will be the output of following CSS code snippet? h1 {color:\"green\"}",
+        "options": [
+            "nothings happen",
+            "error occurs",
+            "heading becomes dark-green",
+            "heading becomes green"
+        ],
+        "answer": "nothings happen"
+    },
+    {
+        "name": "Which of the following CSS style property is used to specify an italic text?",
+        "options": [
+            "style",
+            "font",
+            "font-style",
+            "@font-face"
+        ],
+        "answer": "font-style"
+    }
+]
