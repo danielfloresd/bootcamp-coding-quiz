@@ -98,15 +98,5 @@
             "console.log"
         ],
         "answer": "console.log"
-    },
-    {
-        "name": "What is the type of Pop up boxes available in JavaScript?:",
-        "options": [
-            "Alert",
-            "Confirm",
-            "Prompt",
-            "All the above"
-        ],
-        "answer": "All the above"
     }
 ]
