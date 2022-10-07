@@ -7,12 +7,28 @@
     padding: 0.8rem;
 }
 
+.header-container{
+    /* display: flex; */
+    /* justify-content: space-between; */
+    align-items: center;
+    background-color: var(--header-color);
+    padding: 0;
+    margin: 0;
+}
+
 header {
     padding: 3px;
     text-align: center;
     font-size: xx-large;
     border-radius: 10px;
 }
+
+header img{
+    width: 60px;
+    height: 60px;
+    /* border-radius: 50%; */
+}
+
 
 h2 {
     font-size: x-large;
@@ -26,10 +42,6 @@ body {
     display: flex;
 }
 
-#ol-start {
-    align-items: center;
-}
-
 article {
     align-items: center;
     border-radius: 5px;
@@ -38,6 +50,37 @@ article {
     max-width: 60%;
     margin-left: 20%;
 }
+
+p {
+text-align: left;
+}
+
+select {
+    border-radius: 10px;
+    box-shadow: rgb(0, 0, 0) 0px 2px 8px 0px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    width: 50%;
+    /* opacity: 0.9; */
+    font-size: large;
+    font-weight: bolder; 
+}
+
+
+.option {
+}
+
+.home-btn {
+    border-radius: 10px;
+    box-shadow: rgb(0, 0, 0) 0px 2px 8px 0px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: large;
+    font-weight: bolder;
+}
+
 
 #timer {
     font-family: 'digital-7', sans-serif;
@@ -48,8 +91,15 @@ article {
     margin-left: auto;
     font-size: x-large;
     border-radius: 15px;
-    opacity: 0.9;
+    /* opacity: 0.9; */
+    /* animation: blinker 1s linear infinite; */
 }
+
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
 
 #start-quiz {
     text-align: center;
@@ -69,14 +119,27 @@ ul {
 }
 
 .btn {
+    border: none;
     border-radius: 10px;
     box-shadow: rgb(0, 0, 0) 0px 2px 8px 0px;
     margin-bottom: 10px;
     margin-top: 10px;
     text-align: left;
     width: 50%;
-    opacity: 0.9;
+    /* opacity: 0.9; */
     font-size: large;
+    font-weight: bolder;
+}
+
+.home-btn {
+    border-radius: 10px;
+    box-shadow: rgb(0, 0, 0) 0px 2px 8px 0px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: large;
+    font-weight: bolder;
+    width: 100%;
 }
 
 #btn-scores {
@@ -99,38 +162,83 @@ ul {
     min-height: 90vh;
 }
 
-#ol-scores {
+ol{
+    align-items: center;
+}
+
+#clear {
+    text-align: center;
+}
+
+#table-container {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
 }
 
-#btn-clear {
+/* Set table background color */
+table {
+    background-color: #f1f1c1;
+    border-radius: 10px;
+    width: 100%;
+    /* font-size: larger; */
+}
+
+/* Set table header color */
+thead {
+    background-color: #0969da;
+    color: white;
+}
+
+/* Set table row text center */
+td {
     text-align: center;
 }
 
-#btn-home {
-    text-align: center;
+/* Set table row color */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+.footer-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* bottom: 0; */
+    /* position: absolute; */
+    /* background-color: var(--header-color); */
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
 footer {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-    /* margin-left: 35%; */
-    width: 100%;
-    padding-bottom: 5px;
+    /* justify-content: center;
+    align-items: center; */
+    padding: 3px;
+    /* text-align: center; */
     font-size: smaller;
-    text-align: center;
+    border-radius: 10px;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    padding: 3px;
+    margin: 3px;
 }
 
 footer h3 {
-    padding:2%;
+    padding: 2%;
+}
+
+footer img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
 
 .btn:hover {
     opacity: 1.0;
-    background: pink;
+    background: var(--hover-color);
 }
 
 @media (max-width: 980px) {
@@ -158,6 +266,10 @@ footer h3 {
         margin-left: 0%;
     }
 
+    #ol-start {
+        flex-direction: column;
+    }
+
     .text-area {
         font-size: x-large;
     }
@@ -167,6 +279,6 @@ footer h3 {
     }
 
     footer h3 {
-        padding-top:5%;
+        padding-top: 5%;
     }
 }
