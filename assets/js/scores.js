@@ -32,12 +32,12 @@ function loadScores() {
         // Loop through scores
         for (var i = 0; i < scores.length; i++) {
             var ranking = i + 1;
-            appendRowToTable(ranking,scores[i].initials, scores[i].score, scores[i].quiz, scores[i].difficultyLevel, scores[i].date);
+            appendRowToTable(ranking, scores[i].initials, scores[i].score, scores[i].quiz, scores[i].difficultyLevel, scores[i].date);
         }
     }
 }
 
-function appendRowToTable(ranking,initials, score, quiz, difficultyLevel, date) {
+function appendRowToTable(ranking, initials, score, quiz, difficultyLevel, date) {
     // Create table row
     var tr = document.createElement("tr");
     // Create table data for ranking
@@ -63,7 +63,7 @@ function appendRowToTable(ranking,initials, score, quiz, difficultyLevel, date) 
     // Create table data
     var tdDate = document.createElement("td");
     // Add text to table data
-    var dateObject = new Date(date) ;//new Date(date);
+    var dateObject = new Date(date);//new Date(date);
     // Format current time in milliseconds to date
     var formattedDate = dateObject.toLocaleDateString() + " " + dateObject.toLocaleTimeString();
     tdDate.textContent = formattedDate;

@@ -57,7 +57,7 @@
             "Special characters must be escaped using character entities in XHTML unlike HTML",
             "Charset in html is \"text/html\" where as in xhtml it is \"application/xml+xhtml\""
         ],
-        "answer": "Charset in both html and xhtml is “text/html"
+        "answer": "Charset in both html and xhtml is \"text/html\""
     },
     {
         "name": "Which of the following tag is used for inserting the largest heading in HTML?",
