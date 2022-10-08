@@ -13,7 +13,7 @@ This project aims to implement a timed quiz web application where students can t
 * Students can take the quiz as many times as desired.
 Note: If the student answers a question incorrectly, 10s are deducted from the remaining timer.
 
-The application is implemented using JavaScript, HTML and CSS.
+The application is implemented using JavaScript, HTML and CSS, and it features a responsive desing.
 
 ## Installation
 Respository can be accessed at https://github.com/danielfloresd/bootcamp-coding-quiz/. Source code direct download is located at https://github.com/danielfloresd/bootcamp-coding-quiz/archive/refs/heads/main.zip
