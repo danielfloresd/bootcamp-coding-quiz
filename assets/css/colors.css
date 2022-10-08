@@ -1,17 +1,19 @@
 :root {
     --body-color: #ededf6;
-    /* --header-color: #AB0520; */
-    --header-color: #f13e53;
+    --header-color: #AB0520;
+    --mobile-header-color: #f13e53;
     --h1-color: transparent;  /*#AB0520;*/
     --section-color: #ededf6;
     --article-color: white;
     --ol-color: #d3d3d3;
-    /* --button-color: #0C234B; */
-    --button-color: #328cbe;
+    --button-color: #0C234B;
+    --mobile-button-color: #328cbe;
+
     --hover-color: #097ebd; /*#0C234B;*/
     --p-color: white;
     /* --footer-color: #1a518a; */
-    --footer-color: #328cbe;
+    --footer-color: #0C234B;
+    --mobile-footer-color: #328cbe;
     --footer-font-color: white;
 }
 
@@ -55,8 +57,26 @@ p {
 }
 
 footer{
-    background-color: var(--footer-color);
-    color: var(--footer-font-color);
+    /* background-color: var(--footer-color);
+    color: var(--footer-font-color); */
     margin: 0;
     padding: 0;
+}
+
+@media (max-width: 980px) {
+    header{
+        background-color: var(--mobile-header-color);
+    }
+
+    select {
+        background-color: var(--mobile-button-color);
+    }
+
+    button {
+        background-color: var(--mobile-button-color);
+    }
+
+    footer{
+        /* background-color: var(--mobile-footer-color); */
+    }
 }
