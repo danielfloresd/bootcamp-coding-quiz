@@ -59,7 +59,7 @@ footer {
 }
 
 footer a{
-    background-color: white;
+    color: white;
 }
 
 @media (max-width: 980px) {
