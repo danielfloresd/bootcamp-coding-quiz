@@ -36,31 +36,32 @@
                         <!-- <p>Please select the quiz that you would like:</p> -->
                         <ol>
                             <select id="quiz-select" name="quiz-select">
-                                <option>-- Select --</option>
+                                <option>-- Subject --</option>
                                 <option class="option" value="html">HTML</option>
                                 <option class="option" value="css">CSS</option>
                                 <option class="option" value="js">JavaScript</option>
                             </select>
+                            <label for="quiz-select">Select</label>
                             <!-- Add checkboxes for beginner, intermediate and expert leves in horizontal container-->
                             <div class="checkbox-container">
                                 <div class="checkbox">
                                     <input type="checkbox"
                                         class="difficulty-checkbox"
-                                        name="beginner" value="beginner"
+                                        id="beginner" value="beginner"
                                         checked>
                                     <label for="beginner">Beginner</label>
                                 </div>
                                 <div class="checkbox">
                                     <input type="checkbox"
                                         class="difficulty-checkbox"
-                                        name="intermediate"
+                                        id="intermediate"
                                         value="intermediate">
                                     <label for="intermediate">Intermediate</label>
                                 </div>
                                 <div class="checkbox">
                                     <input type="checkbox"
                                         class="difficulty-checkbox"
-                                        name="expert" value="expert">
+                                        id="expert" value="expert">
                                     <label for="expert">Expert</label>
                                 </div>
                             </div>

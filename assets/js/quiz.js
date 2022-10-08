@@ -33,7 +33,7 @@ var currentQuestion;
 // Correct anwers counter
 var correctAnswers = 0;
 // Define quiz duration
-var quizDuration = 60;
+var quizDuration;
 // Define timer interval
 
 
@@ -43,28 +43,6 @@ function startQuiz() {
     selectQuestion(0);
     // Start timer
     startTimer();
-}
-
-// Define function to request html json file from assets/json
-function requestQuestions(jsonFile) {
-    var requestURL = jsonURL + jsonFile;
-    // Read json file
-    var request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
-    request.onload = function () {
-        var questions = request.response;
-        // Select questions
-        if (questions) {
-            selectQuestions(questions);
-            startQuiz();
-        } else {
-            // Show alert if json file can not be loaded
-            window.alert("Error loading questions. Please try again later.");
-            window.location.replace("./index.html");
-        }
-    }
 }
 
 // Define  function to load all json files
@@ -79,8 +57,21 @@ function init() {
     var params = getParams();
     quizName = params["name"];
     difficultyLevel = params["difficultyLevel"];
-
+    setDifficultyLevel(difficultyLevel);
     loadQuestions(quizName);
+}
+
+// Define set difficulty level function
+function setDifficultyLevel(level) {
+    // Set difficulty level
+    difficultyLevel = level;
+    if (level === "expert") {
+        quizDuration = 30;
+    } else if (level === "intermediate") {
+        quizDuration = 45;
+    } else {
+        quizDuration = 60;
+    }
 }
 
 // Select quiz questions
@@ -114,11 +105,33 @@ function setQuestionButtons(question) {
     // Shuffle options
     // var options = shuffle(question.options);
     var options = question.options;
-      // Loop through buttons
+    // Loop through buttons
     for (var i = 0; i < buttons.length; i++) {
         var button = buttons[i];
         // Set button text
         button.textContent = (i + 1) + ". " + options[i];
+    }
+}
+
+// Define function to request html json file from assets/json
+function requestQuestions(jsonFile) {
+    var requestURL = jsonURL + jsonFile;
+    // Read json file
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+    request.onload = function () {
+        var questions = request.response;
+        // Select questions
+        if (questions) {
+            selectQuestions(questions);
+            startQuiz();
+        } else {
+            // Show alert if json file can not be loaded
+            window.alert("Error loading questions. Please try again later.");
+            window.location.replace("./index.html");
+        }
     }
 }
 
@@ -185,7 +198,7 @@ function endQuiz() {
     var initials = prompt("Enter your initials");
     // Save score
     if (initials) {
-        saveScore(initials, correctAnswers,quizName,difficultyLevel);
+        saveScore(initials, correctAnswers, quizName, difficultyLevel);
         window.location.replace("./scores.html");
     } else {
         window.location.replace("./index.html");
