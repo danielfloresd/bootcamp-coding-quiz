@@ -58,9 +58,6 @@ function checkOnlyOneCheckbox(value) {
 
 // Add init function
 function init() {
-    // Add text to text-area
-    // Set quiz-select selectedIndex to -1
-    // quizSection.selectedIndex = -1;
     addEventListeners();
     textArea.textContent = welcomeMsg;
 }

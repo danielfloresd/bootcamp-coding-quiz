@@ -1,30 +1,33 @@
 
-# JavaScript Coding Quiz
+# UofA Bootcamp Coding Quiz
 
 ## Description
 
 This project aims to implement a timed quiz web application where students can take practice JavaScript coding quizes. This application has the following features:
-
-* Max time per quiz: 1 minute
-* Number of quesitions: 10 - multiple choice
-* Student score board
-* Student scores should be saved to local storage
-* Students can take the quiz as many times as desired
+* Multiple quiz subjects (HTML/CSS/JavaScript).
+* Difficutly levels.
+* Max time per quiz depending on difficulty level.
+* Number of quesitions in random order: 10 - multiple choice.
+* Student score board featuring ranking, subject, difficulty level and quiz time/date.
+* Student scores should be saved to local storage.
+* Students can take the quiz as many times as desired.
 Note: If the student answers a question incorrectly, 10s are deducted from the remaining timer.
 
 The application is implemented using JavaScript, HTML and CSS.
 
 ## Installation
-Respository can be accessed at https://github.com/danielfloresd/js-coding-quiz/. Source code direct download is located at https://github.com/danielfloresd/js-coding-quiz/archive/refs/heads/main.zip
+Respository can be accessed at https://github.com/danielfloresd/bootcamp-coding-quiz/. Source code direct download is located at https://github.com/danielfloresd/bootcamp-coding-quiz/archive/refs/heads/main.zip
 
 ## Usage
-To view the website, please visit https://danielfloresd.github.io/js-coding-quiz/
+To view the website, please visit https://danielfloresd.github.io/bootcamp-coding-quiz/
 
-<img src="./assets/images/website.PNG" width="400" />
+<img src="./assets/images/website.PNG" width="300" />
+<img src="./assets/images/quiz.PNG" width="300" />
+<img src="./assets/images/scores.PNG" width="300" />
 
 ## Credits
 
-Started code provided by UofA bootcamp
+Started code & reset.css provided by UofA bootcamp. Quiz question courtesy of https://www.geeksforgeeks.org.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

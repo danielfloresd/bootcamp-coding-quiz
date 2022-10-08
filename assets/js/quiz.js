@@ -294,11 +294,7 @@ function shuffle(array) {
     return newArray;
 }
 
-
-
-
 // Call addClickEventsOnBtns function
-
 addClickEventsOnBtns();
 
 // Call init function
