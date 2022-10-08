@@ -1,6 +1,6 @@
 
 // Define json file url
-var jsonURL = "https://danielfloresd.github.io/js-coding-quiz/assets/json/";
+var jsonURL = "assets/json/";
 //Get timer element
 var timer = document.getElementById("timer");
 // Get btn-1 button
@@ -22,7 +22,8 @@ var questionNumber = document.getElementById("question-number");
 
 //Get results element
 var results = document.getElementById("results");
-
+// Define difficulty level
+var difficultyLevel;
 // Define quiz name
 var quizName;
 // Selected questions
@@ -32,7 +33,7 @@ var currentQuestion;
 // Correct anwers counter
 var correctAnswers = 0;
 // Define quiz duration
-var quizDuration = 60;
+var quizDuration;
 // Define timer interval
 
 
@@ -44,30 +45,6 @@ function startQuiz() {
     startTimer();
 }
 
-// Define function to request html json file from assets/json
-function requestQuestions(jsonFile) {
-    var requestURL = jsonURL + jsonFile;
-    // Read json file
-    var request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    console.log(requestURL);
-    request.responseType = 'json';
-    request.send();
-    request.onload = function () {
-        var questions = request.response;
-        console.log("response: " + questions);
-        console.log(questions);
-        if (questions) {
-            selectQuestions(questions);
-            startQuiz();
-        } else {
-            // Show alert if json file can not be loaded
-            window.alert("Error loading questions. Please try again later.");
-            window.location.replace("./index.html");
-        }
-    }
-}
-
 // Define  function to load all json files
 function loadQuestions(name) {
     requestQuestions(name + "-questions.json");
@@ -77,19 +54,35 @@ function loadQuestions(name) {
 function init() {
     // Call loadQuestions function
     // get name from getParams()
-    quizName = getParams()["name"];
+    var params = getParams();
+    quizName = params["name"];
+    difficultyLevel = params["difficultyLevel"];
+    setDifficultyLevel(difficultyLevel);
     loadQuestions(quizName);
+}
+
+// Define set difficulty level function
+function setDifficultyLevel(level) {
+    // Set difficulty level
+    difficultyLevel = level;
+    if (level === "expert") {
+        quizDuration = 30;
+    } else if (level === "intermediate") {
+        quizDuration = 45;
+    } else {
+        quizDuration = 60;
+    }
 }
 
 // Select quiz questions
 function selectQuestions(questions) {
-    selectedQuestions = questions;
+    // Suffle array of questions
+    selectedQuestions = shuffle(questions);
+
 }
 
 // Select question by index
 function selectQuestion(index) {
-    console.log("Selecting question " + index);
-    console.log(selectedQuestions);
     currentQuestion = selectedQuestions[index];
     // Set question text
     setQuestionText(currentQuestion);
@@ -109,21 +102,44 @@ function setQuestionNumber(number) {
 
 // Set questions on buttons
 function setQuestionButtons(question) {
+    // Shuffle options
+    // var options = shuffle(question.options);
+    var options = question.options;
     // Loop through buttons
     for (var i = 0; i < buttons.length; i++) {
         var button = buttons[i];
         // Set button text
-        button.textContent = (i + 1) + ". " + question.options[i];
+        button.textContent = (i + 1) + ". " + options[i];
+    }
+}
+
+// Define function to request html json file from assets/json
+function requestQuestions(jsonFile) {
+    var requestURL = jsonURL + jsonFile;
+    // Read json file
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+    request.onload = function () {
+        var questions = request.response;
+        // Select questions
+        if (questions) {
+            selectQuestions(questions);
+            startQuiz();
+        } else {
+            // Show alert if json file can not be loaded
+            window.alert("Error loading questions. Please try again later.");
+            window.location.replace("./index.html");
+        }
     }
 }
 
 // Define option selected function
 function selectOption(option) {
     if (currentQuestion.options[option] === currentQuestion.answer) {
-        console.log("Correct");
         correctAnswer();
     } else {
-        console.log("Incorrect");
         incorrectAnswer();
     }
     nextQuestion();
@@ -180,11 +196,9 @@ function endQuiz() {
 
     // Prompt user to enter initials and show score
     var initials = prompt("Enter your initials");
-
-    console.log("initials: " + initials);
     // Save score
     if (initials) {
-        saveScore(initials, correctAnswers,quizName);
+        saveScore(initials, correctAnswers, quizName, difficultyLevel);
         window.location.replace("./scores.html");
     } else {
         window.location.replace("./index.html");
@@ -193,7 +207,7 @@ function endQuiz() {
 
 
 // Define save score function
-function saveScore(initials, score, quizName) {
+function saveScore(initials, score, quizName, difficultyLevel) {
     // Get scores from local storage
     var scores = JSON.parse(localStorage.getItem("scores"));
     // Check if scores is null
@@ -205,11 +219,14 @@ function saveScore(initials, score, quizName) {
     var scoreObject = {
         initials: initials,
         score: score,
-        quiz: quizName
+        quiz: quizName,
+        difficultyLevel: difficultyLevel,
+        date: Date.now()
     }
     // Add score object to scores array
     scores.push(scoreObject);
     // Save scores array to local storage
+    console.log(scores);
     localStorage.setItem("scores", JSON.stringify(scores));
 }
 
@@ -267,6 +284,18 @@ function getParams() {
     });
     return params;
 }
+
+// Function to shuffle array
+function shuffle(array) {
+    // Copy array
+    var newArray = array.slice();
+    // Shuffle array
+    newArray.sort(() => Math.random() - 0.5);
+    return newArray;
+}
+
+
+
 
 // Call addClickEventsOnBtns function
 

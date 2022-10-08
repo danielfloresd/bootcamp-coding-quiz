@@ -5,8 +5,11 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>".js Coding Quiz"</title>
-        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <title>UofA Bootcamp Coding Quiz</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16"href="assets/images/favicon-16x16.png">
+        <link rel="manifest" href="assets/images/site.webmanifest">
         <link rel="stylesheet" href="assets/css/reset.css" />
         <link rel="stylesheet" href="assets/css/colors.css"/>
         <link rel="stylesheet" href="assets/css/style.css"/>
@@ -16,6 +19,7 @@
         <header>
             <div class="header-container">
                 <h1>UofA Bootcamp Coding Quiz</h1>
+                <img src="./assets/images/logo.png" alt="Picure of Eduarda">
             </div>
         </header>
         <div id="page-container">
@@ -23,6 +27,7 @@
                 <section id="home">
                     <article>
                         <a href="./scores.html">View Ranking</a>
+                        <h2>Welcome to Bootcamp Coding Quiz !</h2>
                         <div>
                             <p id="text-area" readonly class="text-area"
                                 aria-label="Info"></p>
@@ -31,24 +36,44 @@
                         <!-- <p>Please select the quiz that you would like:</p> -->
                         <ol>
                             <select id="quiz-select" name="quiz-select">
-                                <option>-- Select your quiz --</option>
+                                <option>-- Subject --</option>
                                 <option class="option" value="html">HTML</option>
                                 <option class="option" value="css">CSS</option>
                                 <option class="option" value="js">JavaScript</option>
                             </select>
+                            <label for="quiz-select">Select</label>
+                            <!-- Add checkboxes for beginner, intermediate and expert leves in horizontal container-->
+                            <div class="checkbox-container">
+                                <div class="checkbox">
+                                    <input type="checkbox"
+                                        class="difficulty-checkbox"
+                                        id="beginner" value="beginner"
+                                        checked>
+                                    <label for="beginner">Beginner</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox"
+                                        class="difficulty-checkbox"
+                                        id="intermediate"
+                                        value="intermediate">
+                                    <label for="intermediate">Intermediate</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox"
+                                        class="difficulty-checkbox"
+                                        id="expert" value="expert">
+                                    <label for="expert">Expert</label>
+                                </div>
+                            </div>
                         </ol>
-
                     </article>
                 </section>
             </div>
             <footer>
                 <div class="footer-container">
-                    <img src="./assets/images/logo-footer.png" alt="Picure of
-                        Eduarda">
-                    <a href="mailto:daniel.flor3s.d@gmail.com">Made by Daniel
+                    <!-- <a href="mailto:daniel.flor3s.d@gmail.com">Made by Daniel
                         Flores
-                        D &copy; 2022</a>
-                    <img src="./assets/images/logo.png" alt="Picure of Eduarda">
+                        D &copy; 2022</a> -->
                 </div>
             </footer>
         </div>
