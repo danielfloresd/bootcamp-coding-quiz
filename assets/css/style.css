@@ -234,40 +234,26 @@ tr:nth-child(even) {
     /* font-weight: bolder; */
 }
 
-
-.footer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* bottom: 0; */
-    /* position: absolute; */
-    /* background-color: var(--header-color); */
-    padding: 0;
+#footer-container {
+    padding: 0 0 0 0;
     margin: 0;
-    width: 100%;
 }
 
-footer {
-    /* justify-content: center;
-    align-items: center; */
-    /* padding: 3px; */
-    /* text-align: center; */
 
-    /* font-size: smaller;
-    border-radius: 10px;
-    width: 100%;
-    padding: 3px;
-    margin: 3px; */
-    font-size: x-small;
-    /* bottom: 0; */
-    /* position: absolute; */
-    padding: 3px;
-    bottom: 0;
+/* Set footer sticky at the bottom of the page */
+footer {
     position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    /* background-color: var(--header-color); */
+    text-align: center;
+    padding: 0.5rem;
+    /* border-radius: 3px; */
 }
 
 footer h3 {
-    padding: 2%;
+    padding: 0;
 }
 
 footer img {
@@ -325,13 +311,5 @@ footer img {
 
     #scores-table {
         font-size: x-small;
-    }
-
-    footer {
-        position: relative;
-    }
-
-    footer h3 {
-        padding-top: 5%;
     }
 }

@@ -57,10 +57,7 @@ p {
 }
 
 footer{
-    /* background-color: var(--footer-color);
-    color: var(--footer-font-color); */
-    margin: 0;
-    padding: 0;
+     background-color: var(--footer-color);
 }
 
 @media (max-width: 980px) {
@@ -77,6 +74,6 @@ footer{
     }
 
     footer{
-        /* background-color: var(--mobile-footer-color); */
+        background-color: var(--mobile-footer-color);
     }
 }
