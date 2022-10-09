@@ -154,7 +154,7 @@ ul {
 
 #page-container {
     position: relative;
-    min-height: 100vh;
+    min-height: 95vh;
     padding: 0 0 0 0;
 }
 
@@ -215,6 +215,7 @@ footer {
     height: 2.5rem;
     text-align: center;
     padding: 0.5rem;
+    font-size: smaller;
 }
 
 footer h3 {
@@ -225,12 +226,16 @@ footer h3 {
     opacity: 0.8;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 819px) {
 
     /* Call reset.css to remove all previous styling */
     /* Removing all padding and margins for small screen size optimization */
     * {
         padding: 0.5rem;
+    }
+
+    header {
+        font-size: larger;
     }
 
     .btn {
@@ -258,7 +263,7 @@ footer h3 {
     }
 
     select {
-        font-size: medium;
+        font-size: x-large;
     }
 
     option {
@@ -266,6 +271,10 @@ footer h3 {
     }
 
     #scores-table {
+        font-size: x-small;
+    }
+
+    footer{
         font-size: x-small;
     }
 }

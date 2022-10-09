@@ -62,7 +62,7 @@ footer a{
     color: white;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 819px) {
     header {
         background-color: var(--mobile-header-color);
     }
