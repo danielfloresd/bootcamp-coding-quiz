@@ -3,7 +3,7 @@
 
 ## Description
 
-This project aims to implement a timed quiz web application where students can take practice JavaScript coding quizes. This application has the following features:
+This project aims to implement a timed quiz web application where students can take practice HTML.CSS or JavaScript coding quizzes. This application has the following features:
 * Multiple quiz subjects (HTML/CSS/JavaScript).
 * Difficutly levels.
 * Max time per quiz depending on difficulty level.
@@ -27,7 +27,7 @@ To view the website, please visit https://danielfloresd.github.io/bootcamp-codin
 
 ## Credits
 
-Started code & reset.css provided by UofA bootcamp. Quiz question courtesy of https://www.geeksforgeeks.org.
+Started code & reset.css provided by UofA bootcamp. Quiz questions courtesy of https://www.geeksforgeeks.org.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
