@@ -68,6 +68,10 @@ select {
     font-size: small;
 }
 
+option {
+    text-align: center;
+}
+
 /* Add flex row centering to the container for checkboxes with small font size */
 .checkbox-container {
     display: flex;
@@ -268,6 +272,7 @@ footer h3 {
 
     option {
         width: 90%;
+        text-align: center
     }
 
     #scores-table {
