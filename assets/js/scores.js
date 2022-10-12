@@ -66,6 +66,7 @@ function appendRowToTable(ranking, initials, score, quiz, difficultyLevel, date)
     var dateObject = new Date(date);//new Date(date);
     // Format current time in milliseconds to date
     var formattedDate = dateObject.toLocaleDateString() + " " + dateObject.toLocaleTimeString();
+    //var formattedDate = dateObject.toLocaleDateString();
     tdDate.textContent = formattedDate;
 
     // Append table data to table row
