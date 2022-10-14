@@ -19,6 +19,24 @@ function clearScores() {
 }
 
 
+// Add load scores function
+function loadScores() {
+    // Get scores from local storage
+    var scores = JSON.parse(localStorage.getItem("scores"));
+    // If there are scores
+    if (scores !== null) {
+        // Order scores by score
+        scores.sort(function (a, b) {
+            return b.score - a.score;
+        });
+        // Loop through scores
+        for (var i = 0; i < scores.length; i++) {
+            var ranking = i + 1;
+            appendRowToTable(ranking, scores[i].initials, scores[i].score, scores[i].quiz, scores[i].difficultyLevel, scores[i].date);
+        }
+    }
+}
+
 function appendRowToTable(ranking, initials, score, quiz, difficultyLevel, date) {
     // Create table row
     var tr = document.createElement("tr");
