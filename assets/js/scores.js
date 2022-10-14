@@ -26,9 +26,9 @@ function loadScores() {
     // If there are scores
     if (scores !== null) {
         // Order scores by score
-        scores.sort(function (a, b) {
-            return b.score - a.score;
-        });
+        // scores.sort(function (a, b) {
+        //     return b.score - a.score;
+        // });
         // Loop through scores
         for (var i = 0; i < scores.length; i++) {
             var ranking = i + 1;
